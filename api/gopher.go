@@ -17,7 +17,8 @@ func Gopher(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	for _, i := range infos {
-		fmt.Print(w, i.Name())
+		//fmt.Print(w, i.Name())
+		io.WriteString(w, i.Name())
 	}
 
 	// Read the gopher image file.
