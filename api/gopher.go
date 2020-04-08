@@ -22,7 +22,7 @@ func Gopher(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Read the gopher image file.
-	f, err := os.Open("gophercolor.png")
+	f, err := os.Open("./pictures/gophercolor.png")
 	if err != nil {
 		http.Error(w, fmt.Sprintf("Error reading file: %v", err), http.StatusInternalServerError)
 		return
