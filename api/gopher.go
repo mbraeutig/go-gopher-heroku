@@ -9,17 +9,6 @@ import (
 
 // Gopher prints a gopher.
 func Gopher(w http.ResponseWriter, r *http.Request) {
-
-	// infos, err := ioutil.ReadDir(".")
-	// if err != nil {
-	// 	http.Error(w, fmt.Sprintf("Error reading dir: %v", err), http.StatusInternalServerError)
-	// 	return
-	// }
-	// for _, i := range infos {
-	// 	//fmt.Print(w, i.Name())
-	// 	io.WriteString(w, "\n"+i.Name())
-	// }
-
 	// Read the gopher image file.
 	f, err := os.Open("./pictures/gophercolor.png")
 	if err != nil {
