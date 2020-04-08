@@ -8,7 +8,7 @@ import (
 const index = "" +
 	`
 <html>
-    <h1>Testing Heroku</h1>
+    <h1>Testing heroku.com</h1>
 </html>
 `
 
