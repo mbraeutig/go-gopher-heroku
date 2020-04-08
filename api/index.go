@@ -1,6 +1,7 @@
 package api
 
 import (
+	"fmt"
 	"io"
 	"net/http"
 )
@@ -13,5 +14,7 @@ const index = "" +
 `
 
 func Index(w http.ResponseWriter, r *http.Request) {
-	io.WriteString(w, index)
+	if _, err := io.WriteString(w, index); err != nil {
+		http.Error(w, fmt.Sprintf("Error writing response: %v", err), http.StatusInternalServerError)
+	}
 }
