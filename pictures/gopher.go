@@ -1,22 +1,16 @@
 package pictures
 
 import (
-	"bytes"
-	"io"
+	"io/ioutil"
 	"log"
-	"os"
 )
 
-var Gopher bytes.Buffer
+var Gopher []byte
 
 func init() {
-	f, err := os.Open("./pictures/gophercolor.png")
+	b, err := ioutil.ReadFile("./pictures/gophercolor.png")
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer f.Close()
-
-	if _, err := io.Copy(&Gopher, f); err != nil {
-		log.Fatal(err)
-	}
+	Gopher = b
 }
