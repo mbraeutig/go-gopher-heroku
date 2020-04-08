@@ -4,17 +4,14 @@ import (
 	"log"
 	"net/http"
 	"os"
+	
+	"github.com/mbraeutig/go-gopher-heroku/api"
 )
 
-const index = "" +
-	`
-<html>
-    <h1>Testing Heroku</h1>
-</html>
-`
-
 func main() {
-	http.HandleFunc("/", Index)
+	http.HandleFunc("/", api.Index)
+	http.HandleFunc("/gopher", api.Gopher)
+	http.HandleFunc("/healthz", api.Health)
 
 	port := os.Getenv("PORT")
 	if port == "" {
@@ -24,8 +21,4 @@ func main() {
 	if err := http.ListenAndServe(":"+port, nil); err != nil {
 		log.Fatal(err)
 	}
-}
-
-func Index(w http.ResponseWriter, r *http.Request) {
-	io.WriteString(w, index)
 }
