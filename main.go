@@ -4,14 +4,14 @@ import (
 	"log"
 	"net/http"
 	"os"
-	
+
 	"github.com/mbraeutig/go-gopher-heroku/api"
 )
 
 func main() {
 	http.HandleFunc("/", api.Index)
 	http.HandleFunc("/gopher", api.Gopher)
-	http.HandleFunc("/healthz", api.Health)
+	http.HandleFunc("/health", api.Health)
 
 	port := os.Getenv("PORT")
 	if port == "" {
