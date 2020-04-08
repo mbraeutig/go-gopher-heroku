@@ -1,0 +1,9 @@
+{
+	"comment": "",
+	"package": [],
+	"heroku": {
+		"install" : [ "./..." ],
+		"goVersion": "go1.14"
+	},
+	"rootPath": "github.com/mbraeutig/go-gopher-heroku"
+}
