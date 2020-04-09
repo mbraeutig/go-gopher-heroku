@@ -8,9 +8,16 @@ import (
 var Gopher []byte
 
 func init() {
-	b, err := ioutil.ReadFile("./pictures/gophercolor.png")
-	if err != nil {
+	if err := readFile("./public/gophercolor.png", &Gopher); err != nil {
 		log.Fatal(err)
 	}
-	Gopher = b
+}
+
+func readFile(filename string, data *[]byte) error {
+	b, err := ioutil.ReadFile(filename)
+	if err != nil {
+		return err
+	}
+	*data = b
+	return nil
 }
