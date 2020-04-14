@@ -9,7 +9,8 @@ import (
 const index = "" +
 	`
 <html>
-    <h1>Testing heroku.com</h1>
+	<h1>Want to see a gopher, try this!</h1>
+	<h1><a href="gopher">Gopher</a></h1>
 </html>
 `
 
