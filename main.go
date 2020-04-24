@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	http.HandleFunc("/", api.Index)
+	http.HandleFunc("/", api.LogFunc(api.Index))
 	http.HandleFunc("/gopher", api.Gopher)
 	http.HandleFunc("/health", api.Health)
 
